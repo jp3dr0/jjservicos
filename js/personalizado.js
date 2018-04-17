@@ -1,4 +1,22 @@
 $(document).ready(function () {
+
+    $('#exampleModal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget) // Button that triggered the modal
+        var titulo = button.find(".card-title").text();
+        var recipient = button.data('texto') // Extract info from data-* attributes
+        // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+        // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+        var modal = $(this)
+        
+        modal.find('.modal-title').text(titulo)
+        modal.find('.modal-body p').text(recipient)
+        
+      })
+
+    var screenWidth = $(window).width();
+    if (screenWidth < 800){
+        $('item').removeClass('container');
+    }
     
     $(window).scroll(function () {
         if ($(this).scrollTop() > 50) {
@@ -27,6 +45,11 @@ $(document).ready(function () {
     
     //$('#back-to-top').tooltip('show');
     
+    $('#contato-modal').click(function() {
+        $('html, body').animate({
+            scrollTop: $("#contato").offset().top
+        }, 2000);
+    });
 
     // Add smooth scrolling to all links
     $("a").on('click', function (event) {
@@ -65,7 +88,7 @@ $(document).ready(function () {
 
     $('#content-slider').lightSlider({
         enableTouch: true,
-        adaptiveHeight: false,
+        adaptiveHeight: true,
         item: 4,
         loop: false,
         slideMove: 2,
@@ -95,6 +118,11 @@ $(document).ready(function () {
             }
         ],
 
+    });
+
+    $("#clickToShow").toggle();
+    $("#clickToShowButton").click(function() {
+        $("#clickToShow").fadeToggle();
     });
 
     window.sr = ScrollReveal({
