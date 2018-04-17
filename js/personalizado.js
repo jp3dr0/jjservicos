@@ -1,4 +1,33 @@
 $(document).ready(function () {
+    
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 50) {
+            $('#back-to-top').fadeIn();
+        } else {
+            $('#back-to-top').fadeOut();
+        }
+    });
+    // scroll body to 0px on click
+    $('#back-to-top').click(function () {
+        $('#back-to-top').tooltip('hide');
+        $('body,html').animate({
+            scrollTop: 0
+        }, 800);
+        return false;
+    });
+
+    $(window).on("scroll", function() {
+        var scrollHeight = $(document).height();
+        var scrollPosition = $(window).height() + $(window).scrollTop();
+        if ((scrollHeight - scrollPosition) / scrollHeight === 0) {
+            // when scroll to bottom of the page
+            $('#back-to-top').fadeOut();
+        }
+    });
+    
+    //$('#back-to-top').tooltip('show');
+    
+
     // Add smooth scrolling to all links
     $("a").on('click', function (event) {
 
@@ -71,6 +100,7 @@ $(document).ready(function () {
     window.sr = ScrollReveal({
         reset: true
     });
+    /*
     sr.reveal('.card-ani-um', {
         duration: 1000,
         origin: 'left',
@@ -82,6 +112,12 @@ $(document).ready(function () {
         distance: '20px'
     });
     sr.reveal('.card-ani-tres', {
+        duration: 1000,
+        origin: 'right',
+        distance: '20px'
+    });
+    */
+   sr.reveal('.item-ani', {
         duration: 1000,
         origin: 'right',
         distance: '20px'
