@@ -1,5 +1,6 @@
 body {
 	background-color: gainsboro;
+	font-family: 'Fira Sans', sans-serif;
 }
 
 .navbar-light .navbar-toggler {
@@ -55,6 +56,7 @@ img {
 	*/
 }
 
+#googleMap,
 .carousel-inner,
 .jumbotron {
 	margin-top: 20px;
@@ -62,6 +64,7 @@ img {
 }
 
 @media (min-width: 767px) {
+	#googleMap,
 	.carousel-topo,
 	.jumbotron {
 		margin-top: 20px;
@@ -91,6 +94,10 @@ img {
 	color: #FFF;
 	margin-bottom: 0rem;
 	padding: 35px;
+}
+
+.lead {
+	font-size: 1.1em;
 }
 
 .sobre-empresa img {
@@ -238,6 +245,7 @@ img {
 		margin-left: -20px;
 	}
 
+	#googleMap,
 	.contato,
 	.servicos {
 		padding: 20px 20px 10px 20px;
@@ -270,3 +278,37 @@ img {
 	font-size: 1em;
 	font-weight: 450;
 }
+
+.carousel {
+	color: #fafafa;
+	font-family: 'Roboto Slab', serif;
+	font-size: 1.1em;
+	text-shadow: 1px 1px black;
+	font-weight: 800;
+	text-decoration-color: #66AEDE;
+	text-shadow: #D6615B;
+}
+
+#googleMap {
+	width: 100%;
+	height: 400px;
+} 
+
+.carousel-item > img{ 
+	-webkit-filter: grayscale(40%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(40%);
+	background-color:rgba(245,245,245,0.5);
+	min-width: 100%;
+  	min-height: 100%;
+	max-height: 600px;
+	opacity: 0.7;
+	z-index: -1;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+	/* Hide captions */
+	.carousel-caption {
+	   font-size: 0.3em;
+	}
+  }
